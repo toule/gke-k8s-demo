@@ -18,7 +18,7 @@ spec:
 #      hostname: mono
 #      subdomain: subdomain
       containers:
-      - image: asia.gcr.io/architect-hslee/mono:1580349057
+      - image: asia.gcr.io/my_project/mono:TAG
         name: mono-image
         ports:
         - containerPort: 3000
@@ -33,7 +33,7 @@ spec:
             memory: "30Mi"
         livenessProbe:
           httpGet:
-            path: /api
+            path: /health
             port: 3000
           initialDelaySeconds: 1
           timeoutSeconds: 1
