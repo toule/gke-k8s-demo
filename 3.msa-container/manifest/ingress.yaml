@@ -10,6 +10,18 @@ spec:
 #  - host: demo.rayhli.xyz
   - http:
       paths:
+      - path: /
+        backend:
+          serviceName: websport
+          servicePort: 8080
+  - http:
+      paths:
+      - path: /api
+        backend:
+          serviceName: apisport
+          servicePort: 8080 
+  - http:
+      paths:
       - path: /api/users*
         backend:
           serviceName: usersport
@@ -25,16 +37,4 @@ spec:
       - path: /api/posts*
         backend:
           serviceName: postsport
-          servicePort: 8080
-  - http:
-      paths:
-      - path: /api
-        backend:
-          serviceName: apisport
-          servicePort: 8080
-  - http:
-      paths:
-      - path: /
-        backend:
-          serviceName: websport
           servicePort: 8080
