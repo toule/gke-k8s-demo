@@ -2,7 +2,7 @@
 
 
 
-****Base Code: https://github.com/awslabs/amazon-ecs-nodejs-microservices (코드는 대부분 그대로 가져옴)
+****Base Code: https://github.com/awslabs/amazon-ecs-nodejs-microservices
 
 
 
@@ -95,7 +95,7 @@
 
 * 생성 확인
 
-![demo](./images/mono-component.png)
+![mono](./images/mono-component.png)
 
 * Load Balancer 주소 확인
 
@@ -131,7 +131,7 @@
 
 `kubectl get all -L app:msa`
 
-![demo](./images/msa-component.png)
+![msa](./images/msa-component.png)
 
 (정상적으로 진행이 된다면 HTTP 로드밸런서에 의해 동작함)
 
