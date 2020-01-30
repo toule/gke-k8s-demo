@@ -4,8 +4,13 @@ const Router = require('koa-router');
 const app = new Koa();
 const router = new Router();
 
-router.get('/api', (ctx, next)=> {
+/*router.get('/api', (ctx, next)=> {
 	console.log('api request');
+    ctx.body = "Ready to recive API"
+});
+*/
+router.get('/', (ctx, next)=> {
+    console.log('api request');
     ctx.body = "Ready to recive API"
 });
 

@@ -3,8 +3,8 @@ kind: Deployment
 metadata:
   name: web
   labels:
-    app: msa
-    role: web
+    app: msa-web
+    dep: web
 spec:
   replicas: 2
   selector:
@@ -38,7 +38,7 @@ metadata:
   name: api
   labels:
     app: msa
-    role: apis
+    role: msa-api
 spec:
   replicas: 2
   selector:
@@ -72,7 +72,7 @@ metadata:
   name: posts
   labels:
     app: msa
-    role: posts
+    role: msa-post
 spec:
   replicas: 2
   selector:
@@ -106,17 +106,17 @@ metadata:
   name: threads
   labels:
     app: msa
-    role: threads
+    role: msa-threads
 spec:
   replicas: 3
   selector:
     matchLabels:
-      role: msa-thread
+      role: msa-threads
   template:
     metadata:
       labels:
         app: msa
-        role: msa-thread
+        role: msa-threads
     spec:
       containers:
       - image: asia.gcr.io/architect-hslee/threads:1580356477
@@ -140,17 +140,17 @@ metadata:
   name: users
   labels:
     app: msa
-    role: users
+    role: msa-users
 spec:
   replicas: 2
   selector:
     matchLabels:
-      role: msa-user
+      role: msa-users
   template:
     metadata:
       labels:
         app: msa
-        role: msa-user
+        role: msa-users
     spec:
       containers:
       - image: asia.gcr.io/architect-hslee/users:1580356485

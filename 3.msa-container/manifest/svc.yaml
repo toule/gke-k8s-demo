@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: usersport
+  name: usersvc
   labels:
     app: msa
 spec:
@@ -11,13 +11,13 @@ spec:
     protocol: TCP
   type: NodePort
   selector:
-    role: msa-user
+    role: msa-users
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: postsport
+  name: postsvc
   labels:
     app: msa
 spec:
@@ -33,7 +33,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: threadsport
+  name: threadsvc
   labels:
     app: msa
 spec:
@@ -43,13 +43,13 @@ spec:
     protocol: TCP
   type: NodePort
   selector:
-    role: msa-thread
+    role: msa-threads
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: websport
+  name: websvc
   labels:
     app: msa
 spec:
@@ -65,7 +65,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: apisport
+  name: apisvc
   labels:
     app: msa
 spec:

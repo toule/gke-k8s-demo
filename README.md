@@ -41,9 +41,9 @@
 
 ![demo](./images/gke-cluster.png)
 
-* gcloud로 basic cluster 생성 방법
+* gcloud로 basic cluster 생성 방법 (단일 리전 기본 클러스터)
 
-`gcloud container clusters create [CLUSTER_NAME] --zone [COMPUTE_ZONE]`
+`gcloud container clusters create sample-cluster --zone asia-northeast3-a`
 
 * 클러스터 연결
 
@@ -105,7 +105,7 @@
 
 `curl -i -L $LB`
 
-  
+![result](./images/mono-result.png)  
 
 **4. 마이크로 서비스 컨테이너화 확인**
 
@@ -132,6 +132,8 @@
 * 생성 확인
 
 `kubectl get all -L app:msa`
+
+
 
 ![msa](./images/msa-component.png)
 

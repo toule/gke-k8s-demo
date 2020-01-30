@@ -1,40 +1,39 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: ingress-http
+  name: ingress-l7
   labels:
-    dev: msa-ingress
+    ing: msa-ingress
     app: msa
 spec:
   rules:
-#  - host: demo.rayhli.xyz
-  - http:
-      paths:
-      - path: /
-        backend:
-          serviceName: websport
-          servicePort: 8080
+#  - http:
+#      paths:
+#      - path: /
+#        backend:
+#          serviceName: usersvc
+#          servicePort: 8080
+#  - http:
+#      paths:
+#      - path: /
+#        backend:
+#          serviceName: threadsvc
+#          servicePort: 8080
+#  - http:
+#      paths:
+#      - path: /
+#        backend:
+#          serviceName: postsvc
+#          servicePort: 8080
   - http:
       paths:
       - path: /api
         backend:
-          serviceName: apisport
-          servicePort: 8080 
-  - http:
-      paths:
-      - path: /api/users*
-        backend:
-          serviceName: usersport
+          serviceName: apisvc
           servicePort: 8080
   - http:
       paths:
-      - path: /api/threads*
+      - path: /
         backend:
-          serviceName: threadsport
-          servicePort: 8080
-  - http:
-      paths:
-      - path: /api/posts*
-        backend:
-          serviceName: postsport
+          serviceName: websvc
           servicePort: 8080

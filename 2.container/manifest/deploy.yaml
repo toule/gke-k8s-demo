@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: monolith
+  name: mono
   labels:
     app: mono
     dev: mono-deploy
@@ -9,14 +9,14 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: monolith
+      app: mono
   template:
     metadata:
       labels:
-        app: monolith
+        app: mono
     spec:
-      hostname: mono
-      subdomain: subdomain
+#      hostname: mono
+#      subdomain: subdomain
       containers:
       - image: asia.gcr.io/architect-hslee/mono:1580349057
         name: mono-image
