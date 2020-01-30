@@ -11,7 +11,7 @@
 * Google Cloud Platform(GCP)에 계정이 있음
 * 기본적인 쿠버네티스 API Object를 이해함
 
-
+  
 
 **1.gke 기본 설정**
 
@@ -33,7 +33,7 @@
 
 `echo $my_project`
 
-
+  
 
 **2. Kubernetes Cluster**
 
@@ -49,7 +49,7 @@
 
 `gcloud container clusters get-credentials sample-cluster --zone asia-northeast3-a --project $my_project`
 
-
+  
 
 **2. 동작확인**
 
@@ -60,6 +60,8 @@
 아래와 같이 동작화면을 확인
 
 ![demo](./images/demo.png)
+
+  
 
 **3. 단순 컨테이너화 확인**
 
@@ -103,7 +105,7 @@
 
 `curl -i -L $LB`
 
-
+  
 
 **4. 마이크로 서비스 컨테이너화 확인**
 
