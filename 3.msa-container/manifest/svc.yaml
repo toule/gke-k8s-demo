@@ -1,0 +1,78 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: usersport
+  labels:
+    app: msa
+spec:
+  ports:
+  - port: 8080
+    targetPort: 3000
+    protocol: TCP
+  type: NodePort
+  selector:
+    app: msa-user
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postsport
+  labels:
+    app: msa
+spec:
+  ports:
+  - port: 8080
+    targetPort: 3000
+    protocol: TCP
+  type: NodePort
+  selector:
+    app: msa-post
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: threadsport
+  labels:
+    app: msa
+spec:
+  ports:
+  - port: 8080
+    targetPort: 3000
+    protocol: TCP
+  type: NodePort
+  selector:
+    app: msa-thread
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: websport
+  labels:
+    app: msa
+spec:
+  ports:
+  - port: 8080
+    targetPort: 3000
+    protocol: TCP
+  type: NodePort
+  selector:
+    app: msa-web
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: apisport
+  labels:
+    app: msa
+spec:
+  ports:
+  - port: 8080
+    targetPort: 3000
+    protocol: TCP
+  type: NodePort
+  selector:
+    app: msa-api

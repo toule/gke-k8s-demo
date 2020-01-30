@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: monolith
+  labels:
+    app: mono
+    dev: app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: monolith
+  template:
+    metadata:
+      labels:
+        app: monolith
+    spec:
+      hostname: mono
+      subdomain: subdomain
+      containers:
+      - image: asia.gcr.io/architect-hslee/mono:TAG
+        name: mono-image
+        ports:
+        - containerPort: 3000
+          name: http
+          protocol: TCP
+        resources:
+          requests:
+            cpu: "20m"
+            memory: "20Mi"
+          limits:
+            cpu: "30m"
+            memory: "30Mi"
+        livenessProbe:
+          httpGet:
+            path: /api
+            port: 3000
+          initialDelaySeconds: 1
+          timeoutSeconds: 1
+          periodSeconds: 10
+          failureThreshold: 3

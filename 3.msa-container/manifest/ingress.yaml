@@ -1,0 +1,40 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-http
+  labels:
+    dev: msa-ingress
+    app: msa
+spec:
+  rules:
+#  - host: demo.rayhli.xyz
+  - http:
+      paths:
+      - path: /api/users*
+        backend:
+          serviceName: usersport
+          servicePort: 8080
+  - http:
+      paths:
+      - path: /api/threads*
+        backend:
+          serviceName: threadsport
+          servicePort: 8080
+  - http:
+      paths:
+      - path: /api/posts*
+        backend:
+          serviceName: postsport
+          servicePort: 8080
+  - http:
+      paths:
+      - path: /api
+        backend:
+          serviceName: apisport
+          servicePort: 8080
+  - http:
+      paths:
+      - path: /
+        backend:
+          serviceName: websport
+          servicePort: 8080
