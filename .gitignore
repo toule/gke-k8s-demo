@@ -3,6 +3,7 @@
 2.container/node_modules
 2.container/package-lock.json
 2.container/imagepush.sh.bak
+2.container/manifest/pod.yaml
 3.msa-container/api/node_modules
 3.msa-container/api/package-lock.json
 3.msa-container/api/imagepush.sh.bak
@@ -20,4 +21,4 @@
 3.msa-container/web/imagepush.sh.bak
 3.msa-container/push.sh.bak
 3.msa-container/manifest/external-dns-rbac.yaml
-3.msa-container/manifest/external-nds-notrbac.yaml
+3.msa-container/manifest/external-dns-notrbac.yaml

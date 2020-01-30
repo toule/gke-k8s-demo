@@ -81,9 +81,9 @@
 
 * 내 환경(프로젝트 및 이미지 태그)에 맞게 변수 지정
 
-`sed -i "s/my_project/$my_project/g" deploy.yaml`
+`sed -i '' "s/my_project/$my_project/g" deploy.yaml`
 
-`sed -i -e "s/TAG/$TAG/g" deploy.yaml`
+`sed -i '' "s/TAG/$TAG/g" deploy.yaml`
 
 (deploy.yaml 파일에 들어가서 내 프로젝트와 이미지가 제대로 변경되었는지 확인 필요)
 
@@ -101,7 +101,7 @@
 
 * Load Balancer 주소 확인
 
-`LB=$(kubectl get svc monosvc -o json | jq -r ".status.loadBalancer.ingress[].ip)`
+`LB=$(kubectl get svc monosvc -o json | jq -r ".status.loadBalancer.ingress[].ip")`
 
 `curl -i -L $LB`
 
@@ -141,8 +141,10 @@
 
 * Load Balancer 주소 확인
 
-`LB=$(kubectl get ingress ingress-http -o json | jq -r ".status.loadBalancer.ingress[].ip")`
+`LB=$(kubectl get ingress ingress-l7 -o json | jq -r ".status.loadBalancer.ingress[].ip")`
 
 `echo $LB`
 
 `curl -i -L $LB`
+
+![result](./images/msa-result.png)

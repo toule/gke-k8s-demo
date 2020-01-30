@@ -17,3 +17,5 @@ source ./imagepush.sh
 
 cd $dir/web
 source ./imagepush.sh
+
+cd $dir

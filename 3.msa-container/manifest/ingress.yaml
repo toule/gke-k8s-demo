@@ -2,38 +2,27 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: ingress-l7
-  labels:
-    ing: msa-ingress
-    app: msa
 spec:
   rules:
-#  - http:
-#      paths:
-#      - path: /
-#        backend:
-#          serviceName: usersvc
-#          servicePort: 8080
-#  - http:
-#      paths:
-#      - path: /
-#        backend:
-#          serviceName: threadsvc
-#          servicePort: 8080
-#  - http:
-#      paths:
-#      - path: /
-#        backend:
-#          serviceName: postsvc
-#          servicePort: 8080
-  - http:
-      paths:
-      - path: /api
-        backend:
-          serviceName: apisvc
-          servicePort: 8080
   - http:
       paths:
       - path: /
         backend:
           serviceName: websvc
+          servicePort: 8080
+      - path: /api
+        backend:
+          serviceName: apisvc
+          servicePort: 8080
+      - path: /api/users/*
+        backend:
+          serviceName: usersvc
+          servicePort: 8080
+      - path: /api/threads/*
+        backend:
+          serviceName: threadsvc
+          servicePort: 8080
+      - path: /api/posts/*
+        backend:
+          serviceName: postsvc
           servicePort: 8080

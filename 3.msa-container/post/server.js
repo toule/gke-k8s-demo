@@ -11,6 +11,12 @@ router.get('/api/:name', (ctx, next)=> {
 	ctx.body = name +'인';
 });
 */
+
+router.get('/', (ctx, next)=> {
+    console.log("Health Check");
+    ctx.body='Ready to Health Check'
+});
+
 router.get('/api/post/id', (ctx, next) => {
     const { id } = ctx.request.query; 
     if(id) {
@@ -32,11 +38,6 @@ router.get('/api/posts/threads/:threadNum', (ctx, next)=> {
 router.get('/api/posts/users/:userNum', (ctx, next)=> {
 	const users = parseInt(ctx.params.userNum);
 	ctx.body = db.posts.find((post)=>post.user==users);
-});
-
-router.get('/health', (ctx, next)=> {
-	console.log("Health Check");
-	ctx.body='Ready to Health Check'
 });
 
 app.use(router.routes());

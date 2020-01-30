@@ -13,11 +13,6 @@ router.get('/', (ctx, next)=> {
 	ctx.body=indexHtml;
 });
 
-router.get('/health', (ctx, next)=> {
-	console.log('Health Check');
-	ctx.body="Ready to Health Check"
-});
-
 app.use(router.routes());
 app.use(router.allowedMethods());
 

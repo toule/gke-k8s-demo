@@ -16,11 +16,11 @@ router.get('/', (ctx, next)=> {
 	ctx.body=indexHtml;
 });
 
-/*
-router.get('/', (ctx, next)=> {
-	ctx.body = "Ready to Server";
+
+router.get('/health', (ctx, next)=> {
+	ctx.body = "health check";
 });
-*/
+
 router.get('/api', (ctx, next)=> {
     ctx.body = "Ready to recive API"
 });
