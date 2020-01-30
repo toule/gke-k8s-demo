@@ -2,6 +2,9 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: ingress-l7
+  labels:
+    app: msa
+    dev: ingress
 spec:
   rules:
   - http:

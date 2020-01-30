@@ -50,6 +50,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: websvc
+  labels:
+    app: msa
 spec:
   ports:
   - port: 8080
@@ -64,6 +66,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: apisvc
+  labels:
+    app: msa
 spec:
   ports:
   - port: 8080
