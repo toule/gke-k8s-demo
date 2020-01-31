@@ -90,7 +90,7 @@
 
 `sed -i '' "s/TAG/$TAG/g" deploy.yaml`
 
-(deploy.yaml 파일에 들어가서 내 프로젝트와 이미지가 제대로 변경되었는지 확인 필요)
+(deploy.yaml 파일에 들어가서 내 프로젝트와 이미지가 제대로 변경되었는지 확인 필요하며 현재 구조는 최초의 한번의 환경변수에 대해 치환을 해주는 구조이기에 다음에 수정하여 업데이트 하는 경우에는 수동으로 이미지 태그에 대한 입력이 필요함)
 
 * gke 클러스터에 배포
 
@@ -145,6 +145,8 @@
 * 생성 확인
 
 `kubectl get pods,deploy,svc,ingress --selector=app=msa`
+
+(HTTP(S) Load Balancer의 경우 생성하고 배포하는데 수분이 소요됨)
 
 ![msa](./images/msa-component.png)
 
