@@ -54,7 +54,7 @@
 
   
 
-**2. 동작확인**
+**2. 동작 확인**
 
 설명: 1번 monolith directory에서 koa framework 동작
 
