@@ -9,7 +9,10 @@
 **0. 가정사항**
 
 * Google Cloud Platform(GCP)에 계정이 있음
+
 * 기본적인 쿠버네티스 API Object를 이해함
+
+* 환경: MacOS Catalina 10.15.2
 
   
 
@@ -141,9 +144,7 @@
 
 * 생성 확인
 
-`kubectl get all -L app:msa`
-
-
+`kubectl get pods,svc,ingress --selector=app=msa`
 
 ![msa](./images/msa-component.png)
 
