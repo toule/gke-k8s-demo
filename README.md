@@ -2,7 +2,7 @@
 
 
 
-****Base Code: https://github.com/awslabs/amazon-ecs-nodejs-microservices
+***Base Code**: https://github.com/awslabs/amazon-ecs-nodejs-microservices*
 
 
 
