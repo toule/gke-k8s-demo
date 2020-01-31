@@ -102,7 +102,7 @@
 
 * 생성 확인
 
-`kubectl get pod,svc --selector=app=mono`
+`kubectl get pods,svc --selector=app=mono`
 
 ![mono](./images/mono-component.png)
 
@@ -144,7 +144,7 @@
 
 * 생성 확인
 
-`kubectl get pods,svc,ingress --selector=app=msa`
+`kubectl get pods,deploy,svc,ingress --selector=app=msa`
 
 ![msa](./images/msa-component.png)
 
@@ -176,4 +176,4 @@
 
 `gcloud container clusters delete sample-cluster --zone asia-northeast3-a`
 
-(혹은 콘솔에서 삭제)
+(혹은 console에서 삭제)
